@@ -1,0 +1,145 @@
+"************************
+"" Basic Setup
+"************************
+let g:airline_theme='dracula'
+" colorscheme onedark
+color dracula
+set guifont=operator\mono\medium\ 10
+set guioptions-=m "remove menu bar
+set guioptions-=T "remove toolbar
+set guioptions-=r "remove right-hand scroll bar
+set guioptions-=L "remove left-hand scroll bar
+set guioptions-=e "remove tab
+
+set guioptions+=a "enable autoselect: the visuly highlighted text is available for pasting into other applications.
+
+"" Tabs
+set tabstop=2
+set shiftwidth=2
+set expandtab
+"************************
+"" Visual Settings
+"************************
+" line-height for the gui version
+set linespace=0
+" highlight current line
+set cursorline
+
+set mouse=a "enable full mouse support in the console
+
+"h" Display special characters and helpers
+set list
+"" Show < or > when characters are not displayed on the left or right.
+" Also show tabs and trailing spaces.
+set list listchars=eol:¬,tab:->,trail:.,precedes:<,extends:>
+
+"************************
+"" Plugins Config
+"************************
+
+" configure syntastic to support eslint
+" let g:syntastic_javascript_checkers = ['eslint']
+
+""" prettier/prettier-vim config
+let g:prettier#autoformat = 0
+let g:prettier#quickfix_enabled = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*tsx,*.css,*.less,*.scss,*.json,*.graphql PrettierAsync
+" print spaces between brackets
+let g:prettier#config#bracket_spacing = 'true'
+" put > on the last line instead of new line
+let g:prettier#config#jsx_bracket_same_line = 'false'
+" none|es5|all
+let g:prettier#config#trailing_comma = 'es5'
+
+""" ALE settings ******
+
+let g:ale_linters = {
+      \'javascript.jsx': ['eslint'],
+      \'javascript': ['eslint'],
+      \}
+
+" ALEFix will try to fix the JS code with eslint.
+let g:ale_fixers = {
+       \'javascript.jsx': [],
+       \'javascript': [],
+       \}
+
+" fix files on save
+" let g:ale_fix_on_save = 1
+
+" keymaps
+" nmap <F8> <Plug>(ale_fix)
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+let g:ale_lint_on_insert_leave = 1
+let g:ale_set_balloons = 1
+
+" show errors in airline
+let g:airline#extensions#ale#enabled = 1
+
+" Less aggressive than the default '>>'
+" let g:ale_sign_error = '●'
+" let g:ale_sign_warning = '.'
+
+""" END ALE settings ******
+
+""" omnifunc config
+set omnifunc=syntaxcomplete#Complete
+
+""" flowtype/vim-flow
+let g:flow#enable = 0
+
+" emmet-vim config"
+"
+let g:user_emmet_install_global=0
+let g:user_emmet_settings = {
+      \ 'javascript' : {
+        \ 'extends': 'jsx',
+        \ }
+        \}
+autocmd Filetype html,css,javascript,ejs EmmetInstall
+" CtrlP "
+" show hidden files
+let g:ctrlp_show_hidden=1
+
+" NERDTree config
+let g:NERDTreeWinSize = 25
+"*** todo: add new keymap to toggle nerdtree ***"
+
+" bclose
+let bclose_multiple = 0
+"************************
+"" Functions
+"************************
+
+"************************
+"" Autocmd Rules
+"************************
+
+" vim-php
+augroup vimrc-php
+  autocmd!
+  autocmd Filetype php set tabstop=4|set shiftwidth=4|set expandtab smartindent
+augroup END
+
+" vim-jsx-impreve
+augroup vim-jsx-improve
+	autocmd!
+ 	autocmd Filetype javascript set tabstop=2|set shiftwidth=2|set expandtab smartindent
+ augroup END
+
+" automatically source the vimrc file on save
+augroup autosourcing
+  autocmd!
+  autocmd BufWritePost ~/.vimrc.local source ~/.vimrc
+augroup END
+"************************
+"" Mapping
+"************************
+" map edit local vimrc file in new tab to ,ev
+nmap <leader>ev :tabe ~/.vim/vimrc.local
+
+" map source vimrc
+nmap <leader>sr :source ~/.vimrc
+

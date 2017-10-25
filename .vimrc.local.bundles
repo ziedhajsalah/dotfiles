@@ -1,0 +1,34 @@
+"************************
+"*****custom plug********
+"************************
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-surround'
+Plug 'sickill/vim-pasta'
+Plug 'qpkorr/vim-bufkill'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'kien/ctrlp.vim'
+set runtimepath^=~/.vim/plugged/ctrlp.vim
+
+"" Color
+Plug 'trevordmiller/nova-vim'
+Plug 'joshdick/onedark.vim'
+Plug 'dracula/vim'
+"" Snippets
+
+"" Javascript Bundle
+" Plug 'pangloss/vim-javascript'
+Plug 'chemzqm/vim-jsx-improve'
+Plug 'fleischie/vim-styled-components'
+Plug 'w0rp/ale'
+Plug 'prettier/vim-prettier'
+Plug 'flowtype/vim-flow'
+
+" jsx support
+" Plug 'mxw/vim-jsx'
+" json suppot
+Plug 'elzr/vim-json'
+
+"" HTML Bundle
+
+"" PHP Bundle
+

@@ -1,0 +1,7 @@
+[user]
+	name = zied hajsalah
+	email = ziedhajsalah@gmail.com
+[color]
+	ui = true
+[core]
+	pager = less -
