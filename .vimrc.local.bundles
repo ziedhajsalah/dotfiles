@@ -20,7 +20,7 @@ Plug 'dracula/vim'
 Plug 'chemzqm/vim-jsx-improve'
 Plug 'fleischie/vim-styled-components'
 Plug 'w0rp/ale'
-Plug 'prettier/vim-prettier'
+" Plug 'prettier/vim-prettier'
 Plug 'flowtype/vim-flow'
 
 " jsx support

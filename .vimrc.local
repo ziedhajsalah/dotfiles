@@ -40,18 +40,10 @@ set list listchars=eol:¬,tab:->,trail:.,precedes:<,extends:>
 " configure syntastic to support eslint
 " let g:syntastic_javascript_checkers = ['eslint']
 
-""" prettier/prettier-vim config
-let g:prettier#autoformat = 0
-let g:prettier#quickfix_enabled = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*tsx,*.css,*.less,*.scss,*.json,*.graphql PrettierAsync
-" print spaces between brackets
-let g:prettier#config#bracket_spacing = 'true'
-" put > on the last line instead of new line
-let g:prettier#config#jsx_bracket_same_line = 'false'
-" none|es5|all
-let g:prettier#config#trailing_comma = 'es5'
-
 """ ALE settings ******
+
+let g:ale_completion_enabled = 1
+let g:ale_fix_on_save = 1
 
 let g:ale_linters = {
       \'javascript.jsx': ['eslint'],
@@ -59,10 +51,8 @@ let g:ale_linters = {
       \}
 
 " ALEFix will try to fix the JS code with eslint.
-let g:ale_fixers = {
-       \'javascript.jsx': [],
-       \'javascript': [],
-       \}
+let g:ale_fixers = {}
+let g:ale_fixers.javascript = ['eslint']
 
 " fix files on save
 " let g:ale_fix_on_save = 1
