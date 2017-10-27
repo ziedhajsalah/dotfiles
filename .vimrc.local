@@ -1,9 +1,9 @@
 "************************
 "" Basic Setup
 "************************
-let g:airline_theme='dracula'
+let g:airline_theme='molokai'
 " colorscheme onedark
-color dracula
+color molokai
 set guifont=operator\mono\medium\ 10
 set guioptions-=m "remove menu bar
 set guioptions-=T "remove toolbar
@@ -24,6 +24,9 @@ set expandtab
 set linespace=0
 " highlight current line
 set cursorline
+
+" to let vim consider word separated with dots as single words
+set iskeyword-=.
 
 set mouse=a "enable full mouse support in the console
 
