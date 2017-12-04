@@ -1,10 +1,10 @@
 "************************
 "" Basic Setup
 "************************
-let g:airline_theme='molokai'
-" colorscheme onedark
-color molokai
-set guifont=operator\mono\medium\ 10
+let g:airline_theme='onedark'
+colorscheme onedark
+" set guifont=operator\mono\book\ 11
+set guifont=monaco\ 10
 set guioptions-=m "remove menu bar
 set guioptions-=T "remove toolbar
 set guioptions-=r "remove right-hand scroll bar
@@ -102,6 +102,10 @@ let g:NERDTreeWinSize = 25
 
 " bclose
 let bclose_multiple = 0
+
+" vim-multiple-cursors
+let g:multi_cursor_exit_from_visual_mode = 0
+let g:multi_cursor_exit_from_insert_mode = 0
 "************************
 "" Functions
 "************************
